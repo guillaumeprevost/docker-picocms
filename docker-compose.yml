@@ -5,7 +5,7 @@ services:
   picocms:
     restart: always
     build: .
-    image: guillaumeprevost/picocms
+    image: gprevost/picocms
     command:
       "/run.sh"
     ports:
