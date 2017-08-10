@@ -25,7 +25,7 @@ To stop the container:
 Once up and running, 4 docker volumes allow changes directly into the container:
 
 - **plugins**: [pico_edit](https://github.com/blocknotes/pico_edit) plugin is pre-installed. Follow PicoCMS doc to [install plugins](http://picocms.org/docs/#plugins).  ([Find more plugins](https://github.com/picocms/Pico/wiki/Pico-Plugins))
-- **themes**: the default theme is installed. Follow PicoCMS doc to [add or edit themes](http://picocms.org/docs/#themes)
+- **themes**: the default theme is installed. Follow PicoCMS doc to [add or edit themes](http://picocms.org/docs/#themes). ([Find more themes](http://picocms.org/themes/))
 - **content**: the initial sample content files are present. Follow PicoCMS doc to [create content](http://picocms.org/docs/#creating-content)
 - **config**: The default config is set up. Follow PicoCMS doc to [change configuration](http://picocms.org/docs/#config)
 

@@ -10,7 +10,6 @@ services:
       "/run.sh"
     ports:
       - 80:80
-    env_file: .env
     volumes:
       - ./config:/home/sites/picocms/config
       - ./content:/home/sites/picocms/content
