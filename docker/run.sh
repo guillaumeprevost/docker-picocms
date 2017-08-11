@@ -1,18 +1,28 @@
 #!/bin/sh
 
-echo "Moving Pico configuration"
-mv /home/sites/picocms/init/config/* /home/sites/picocms/config/
+if [ -d "/home/sites/picocms/init/config" ] && [ "$(ls -A /home/sites/picocms/init/config)" ]; then
+  echo "Moving Pico configuration"
+  cp -rn /home/sites/picocms/init/config/* /home/sites/picocms/config/
+fi
 
-echo "Moving initial plugins to plugins"
-mv /home/sites/picocms/init/plugins/* /home/sites/picocms/plugins/
+if [ -d "/home/sites/picocms/init/plugins" ] && [ "$(ls -A /home/sites/picocms/init/plugins)" ]; then
+  echo "Moving initial plugins to plugins"
+  cp -rn /home/sites/picocms/init/plugins/* /home/sites/picocms/plugins/
+fi
 
-echo "Moving initial themes to themes"
-mv /home/sites/picocms/init/themes/* /home/sites/picocms/themes/
+if [ -d "/home/sites/picocms/init/themes" ] && [ "$(ls -A /home/sites/picocms/init/themes)" ]; then
+  echo "Moving initial themes to themes"
+  cp -rn /home/sites/picocms/init/themes/* /home/sites/picocms/themes/
+fi
 
 echo "Moving content-sample to content"
-mv /home/sites/picocms/init/content/* /home/sites/picocms/content/
-mv /home/sites/picocms/content-sample/* /home/sites/picocms/content/
+if [ -d "/home/sites/picocms/init/content" ] && [ "$(ls -A /home/sites/picocms/init/content)" ]; then
+  cp -rn /home/sites/picocms/init/content/* /home/sites/picocms/content/
+else
+  mv /home/sites/picocms/content-sample/* /home/sites/picocms/content/  
+fi
 
 rm -rf /home/sites/picocms/init
+rm -rf /home/sites/picocms/content-sample
 
 /init
