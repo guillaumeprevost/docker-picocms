@@ -15,11 +15,9 @@ if [ -d "/home/sites/picocms/init/themes" ] && [ "$(ls -A /home/sites/picocms/in
   cp -rn /home/sites/picocms/init/themes/* /home/sites/picocms/themes/
 fi
 
-echo "Moving content-sample to content"
-if [ -d "/home/sites/picocms/init/content" ] && [ "$(ls -A /home/sites/picocms/init/content)" ]; then
-  cp -rn /home/sites/picocms/init/content/* /home/sites/picocms/content/
-else
-  mv /home/sites/picocms/content-sample/* /home/sites/picocms/content/  
+if [ ! -d "/home/sites/picocms/content" ] || [ ! "$(ls -A /home/sites/picocms/content)" ]; then
+    echo "Moving content-sample to content"
+    mv /home/sites/picocms/content-sample/* /home/sites/picocms/content/  
 fi
 
 rm -rf /home/sites/picocms/init
